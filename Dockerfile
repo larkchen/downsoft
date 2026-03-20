@@ -3,7 +3,7 @@ FROM alpine:3.16
 ENV TZ=Asia/Shanghai TIME_ZONE=Asia/Shanghai
 
 RUN apk add --no-cache tzdata && \
-    /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     apk del tzdata wget && \
     mkdir -p /usr/share/zoneinfo/Asia && \
     mv /etc/localtime /usr/share/zoneinfo/Asia/Shanghai && \
